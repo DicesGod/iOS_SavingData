@@ -20,6 +20,33 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Zl-ov-zTa">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" rowHeight="104" id="0vw-tf-0SG" customClass="TableViewCell" customModule="StudentData" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="104"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0vw-tf-0SG" id="9WT-zd-IOT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="103.66666666666667"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjF-BO-IV7" userLabel="StudentName">
+                                                    <rect key="frame" x="28" y="19" width="358" height="66"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pjF-BO-IV7" firstAttribute="top" secondItem="9WT-zd-IOT" secondAttribute="topMargin" constant="8" id="AK1-pE-s2E"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pjF-BO-IV7" secondAttribute="bottom" constant="8" id="RDR-CU-20J"/>
+                                                <constraint firstItem="pjF-BO-IV7" firstAttribute="leading" secondItem="9WT-zd-IOT" secondAttribute="leadingMargin" constant="8" id="d5I-4J-peQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pjF-BO-IV7" secondAttribute="trailing" constant="8" id="tpz-qU-VbN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="studentName" destination="pjF-BO-IV7" id="oEf-jU-6XU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,24 +65,27 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="7Zl-ov-zTa" id="PaY-Fb-ic4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981.60000000000002" y="792.95352323838085"/>
+            <point key="canvasLocation" x="981.15942028985512" y="792.85714285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Student View Controller-->
         <scene sceneID="QPI-VI-eMn">
             <objects>
-                <viewController id="cta-w9-zHx" sceneMemberID="viewController">
+                <viewController id="cta-w9-zHx" customClass="StudentViewController" customModule="StudentData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7hR-rB-riI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8EU-Lh-PSg">
-                                <rect key="frame" x="16" y="103.99999999999999" width="382" height="210.66666666666663"/>
+                                <rect key="frame" x="16" y="103.99999999999999" width="382" height="250.66666666666663"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4nb-FA-W0e">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="210.66666666666666"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4nb-FA-W0e">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="250.66666666666666"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4n-gm-ouz">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="20.333333333333332"/>
@@ -63,27 +93,30 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4p-WG-vNU">
-                                                <rect key="frame" x="0.0" y="40.333333333333343" width="382" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4p-WG-vNU" userLabel="FirstNameTextField">
+                                                <rect key="frame" x="0.0" y="50.333333333333343" width="382" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf1-Bi-dqC">
-                                                <rect key="frame" x="0.0" y="90.333333333333343" width="382" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="110.33333333333334" width="382" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6hF-RL-hk1">
-                                                <rect key="frame" x="0.0" y="130.66666666666666" width="382" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6hF-RL-hk1" userLabel="LastNameTextField">
+                                                <rect key="frame" x="0.0" y="160.66666666666669" width="382" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNO-1N-Hjg">
-                                                <rect key="frame" x="0.0" y="180.66666666666669" width="382" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="0.0" y="220.66666666666669" width="382" height="30"/>
+                                                <state key="normal" title="Save"/>
+                                                <connections>
+                                                    <action selector="SaveStudent:" destination="cta-w9-zHx" eventType="touchUpInside" id="50v-wU-XsS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -98,6 +131,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Ud-gB-GOX"/>
                     </view>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="z4p-WG-vNU" id="Yac-DF-4vk"/>
+                        <outlet property="lastNameTextField" destination="6hF-RL-hk1" id="6ST-AX-Qgv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X02-SO-50k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
